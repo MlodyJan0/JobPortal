@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'allauth',
+    'allauth.account',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -120,7 +124,33 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'Style/'),
+)
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'User.User'
+
+LOGIN_REDIRECT_URL = 'all-offers'
+LOGOUT_REDIRECT_URL = 'login'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend'
+]
+
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+#SITE_ID = 2
+
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Images/')
