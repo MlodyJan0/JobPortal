@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{%load static%}
+{%block content%}
+<html>
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0px;
+            background-color: #4B4A67;
+        }
+    </style>
+</head>
+
+<body bgcolor="black">
+    <div style=" margin:0px; padding:10px; ">
+        {% for response in responses %}
+        <div style="background-color: #b3b3cc; min-width: 32%; min-height: 600px; padding: 5px; margin: 5px; float: left; margin-left:1%; ">
+            Name: <h1>{{ response.firstName }}</h1>
+            Lastname: <h1>{{ response.lastName }}</h1>
+            Phone: <h1>{{ response.phoneNumber }}</h1>
+            Email: <h1>{{ response.email }}</h1>
+            Description: <h1>{{ response.description }}</h1>
+            {%if response.experience %}
+            Experience in profession(years): <h1>{{ response.experience }}</h1>
+            {%endif%}
+            {%if response.education %}
+            Education level: <h1>{{ response.education }}</h1>
+            {%endif%}
+            {%if response.knownLanguages %}
+            Known languages: <h1>{{ response.knownLanguages }}</h1>
+            {%endif%}
+
+            {%if response.image %}
+            <a href="{{response.image.url}}" target="_blank" style="text-decoration:none;color:dodgerblue;font-size:25px;">Show CV of candidate</a>
+            {%endif%}
+        </div>
+            {% endfor %}
+        </div>
+    {%if not responses%}
+    <center><h1 style="color:wheat;">There are no responses for your offer.</h1></center>
+    {%endif%}
+</body>
+
+</html>
+    {%endblock%}

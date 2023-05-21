@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
 from django.urls import reverse
 from .manager import UserManager
 
-class User(AbstractBaseUser):
+class User(AbstractBaseUser, PermissionsMixin):
     username = None
-
+    objects = UserManager()
+    
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     name = models.CharField(max_length=30)

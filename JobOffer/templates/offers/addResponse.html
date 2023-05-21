@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="background-color: #4B4A67; min-block-size:1000px;margin-top:0px;">
+    {% if user.is_authenticated %}
+    <div style="width: 50%; height: 60%; background-color: #b3b3cc; margin: auto;">
+
+        <form class="needs-validation" novalidate method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-row" style="margin-left: 10%; margin-right: 10%;">
+                Short description:{{form.description.errors}}
+                {{form.description}}
+                {% if object.wantExperience %}
+                Provide your experience in profession:
+                {{form.experience}}{{form.experience.errors}}
+                {% endif %}
+                {% if object.wantEducation %}
+                Write down your education level:
+                {{form.education}}
+                {% endif %}
+                {% if object.wantLanguages %}
+                Which languages you know?
+                {{form.knownLanguages}}
+                {% endif %}
+                </br>
+                Your CV:
+                {{form.image}}{{form.image.errors}}
+
+
+                <center>
+
+                    <button class="btn btn-primary" style="width: 200px; margin-bottom:2%; margin-top:2%;" type="submit">
+                        Send application
+                    </button>
+
+
+                </center>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+{% else %}
+<h1>You are not allowed</h1>
+        {% endif %}
+
+        {% endblock %}
+

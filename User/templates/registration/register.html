@@ -1,0 +1,26 @@
+{%load static%}
+<head>
+    
+    <link rel="stylesheet" href="{% static 'styles.css'%}" />
+</head>
+
+<div class="wrapper" style="max-height:1200px;">
+    <div class="logo">
+        <img src="https://www.clipartmax.com/png/middle/32-329418_find-best-jobs-in-our-portal-job-logo.png" alt="">
+    </div>
+    <div class="text-center mt-4 name" style="text-align:center;">
+        JobOffers
+    </div>
+    <form class="p-3 mt-3" style="text-align:center;" method="POST">
+        {% csrf_token %}       
+        {{form.as_p}}
+
+
+        <button class="btn mt-3">Register</button>
+    </form></br>
+    <div class="text-center fs-6">
+        or <a href="{% url 'login' %}" style="font-size: 19px;">Login</a> if you are our client already
+    </div>
+
+</div>
+

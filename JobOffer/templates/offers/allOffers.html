@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+   {%load static%}
+{% block content %}
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'styles.css'%}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0px;
+            background-color: #4B4A67;
+        }
+    </style>
+
+</head>
+
+<div style="background-color: #4B4A67 ">
+    <div style="padding-left:1%;  margin-top:1%;margin-left:5%;  display: inline-block; float:left;position:fixed;">
+        {% if not ifEdit  %}
+        <p style="margin-top:20%;">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Show Categories
+            </a>
+        </p>
+
+        {% for offer in object_list %}
+        {% ifchanged %}
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <a style="text-decoration: none; color: navy; font-family:
+                'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
+                   href="{% url 'detail-category' offer.category %}"> {{ offer.category }}</a></br>
+            </div>
+        </div>
+        {% endifchanged %}
+        {% endfor %}
+        {% endif %}
+
+    </div>
+    <h1 align="center" style="color: white;">Offers for Jobs </h1>
+    <ul>
+        <div style="width: 900px; margin: 0 auto; background-color: #C9DCB3; min-block-size:1000px;">
+            {% if object_list %}
+            {% for offer in object_list %}
+
+            <div class="card mb-3" style="max-width: 800px; margin: 0 auto;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="https://i.pinimg.com/originals/98/f1/3b/98f13be7284304d89c884bf5064f22c9.gif" width="200" height="100" class="img-fluid rounded-start" alt="b" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a style="text-decoration:none;color:navy;font-family:'Trebuchet MS',
+                                        'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
+                                   href="{% url 'detail-offer' offer.pk %}">{{ offer.title }}</a>
+                            </h5>
+                            <p class="card-text"><small class="text-muted">{{ offer.company }} - {{ offer.position }}</small></p>
+                            <a href="{% url 'detail-category' offer.category %}" style="text-decoration:none;color:navy;font-family:'Trebuchet MS', 'Lucida Sans Unicode',
+                                        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"> {{ offer.category }}</a>
+
+                            {% if user.is_authenticated and ifEdit %}
+                            <a href="{% url 'update-offer' offer.pk%}">Edit </a>
+                            <a href="{% url 'delete-offer' offer.pk%}">Delete </a>
+                            <a href="{% url 'detail-offer' offer.pk%}">Detail </a>
+                            <a href="{% url 'list-response' offer.pk%}">Responses </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% else %}
+            <h1 align="center">There are no job offers</h1>
+            {% endif %}
+        </div>
+    </ul>
+
+</div>
+    {% endblock  %}

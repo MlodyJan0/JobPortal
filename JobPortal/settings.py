@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'allauth',
     'allauth.account',
     'django.contrib.sites',
@@ -149,7 +148,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
-#SITE_ID = 2
+SITE_ID = 1
 
 MEDIA_URL = '/images/'
 

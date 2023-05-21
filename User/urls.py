@@ -1,6 +1,6 @@
 from django.urls import path, include
 from .views import UserRegisterView, UpdateUserView
-from ..company.views import CompanyRegisterView
+from Company.views import CompanyRegisterView
 
 urlpatterns = [
     path('registerUser/', UserRegisterView.as_view(), name='register-user'),

@@ -2,7 +2,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from .forms import CustomUserChangeForm, CustomUserCreationForm
 from django.views.generic import UpdateView
-from .models import MyUser
+from .models import User
 from django.shortcuts import redirect
 
 
@@ -13,7 +13,7 @@ class UserRegisterView(generic.CreateView):
 
 
 class UpdateUserView(UpdateView):
-    model = MyUser
+    model = User
     form_class = CustomUserChangeForm
     template_name = 'user/updateUser.html'
 

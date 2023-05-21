@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <h1>{{ company.name }}</h1>
+
+    <small>{{ company.email }}</small></br>
+
+    <a href="{% url 'delete-company' company.pk%}">Delete </a><br /><br />
+{% else %}
+    <h1>You are not allowed</h1>
+{% endif %}
+
+{% endblock %}
