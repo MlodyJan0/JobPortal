@@ -150,6 +150,6 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 SITE_ID = 1
 
-MEDIA_URL = '/images/'
+MEDIA_URL = '/file/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'Images/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'File/')
