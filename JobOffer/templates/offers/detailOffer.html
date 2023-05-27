@@ -12,10 +12,10 @@
 
 </head>
 
-<div style="background-color: #4B4A67 ">
+<div style="background-color: #BFCDE0 ">
 
     <ul>
-        <div style="width: 900px; margin: 0 auto; background-color: #C9DCB3; min-block-size:1000px;">
+        <div style="width: 900px; margin: 0 auto; background-color: #5D5D81; min-block-size:1000px;">
 
 
             {% if user.is_authenticated %}
@@ -37,7 +37,7 @@
 
 
                             <p style="margin-top:20%;">
-                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                     Get Contact
                                 </a>
                             </p>
@@ -48,10 +48,10 @@
                                 </div>
                             </div>
 
-                            <button type="button" class="btn btn-primary"><a style="color:white;" href="{% url 'all-offers' %}">Back</a></button>
-                            {% if user.type == 'user' and not user.socialaccount_set.all.0.uid %}
+                            <button type="button" class="btn"><a style="color:#BFCDE0; text-decoration:none;" href="{% url 'all-offers' %}">Back</a></button>
+                            {% if user.type == 'user'%}
 
-                            <button type="button" class="btn btn-primary"><a style="color:white;" href="{% url 'add-response' object.pk %}">Apply</a></button>
+                            <button type="button" class="btn btn-primary"><a style="color:#BFCDE0; text-decoration:none;" href="{% url 'add-response' object.pk %}">Apply</a></button>
                             {%endif%}
 
                             {% else %}

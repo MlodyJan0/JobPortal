@@ -7,20 +7,21 @@
         html, body {
             height: 100%;
             margin: 0px;
-            background-color: #4B4A67;
+            background-color: #BFCDE0;
+            color: #BFCDE0;
         }
     </style>
 </head>
 
-<body bgcolor="black">
+<body >
     <div style=" margin:0px; padding:10px; ">
         {% for response in responses %}
-        <div style="background-color: #b3b3cc; min-width: 32%; min-height: 600px; padding: 5px; margin: 5px; float: left; margin-left:1%; ">
+        <div style="background-color: #5D5D81; min-width: 32%; min-height: 600px; padding: 20px; margin: 5px; float: left; margin-left:1%; border-radius: 15px;">
             Name: <h1>{{ response.firstName }}</h1>
             Lastname: <h1>{{ response.lastName }}</h1>
             Phone: <h1>{{ response.phoneNumber }}</h1>
             Email: <h1>{{ response.email }}</h1>
-            Description: <h1>{{ response.description }}</h1>
+            Description: {{ response.description }}
             {%if response.experience %}
             Experience in profession(years): <h1>{{ response.experience }}</h1>
             {%endif%}
@@ -38,7 +39,7 @@
             {% endfor %}
         </div>
     {%if not responses%}
-    <center><h1 style="color:wheat;">There are no responses for your offer.</h1></center>
+    <center><h1 style="color:#BFCDE0;">There are no responses for your offer.</h1></center>
     {%endif%}
 </body>
 

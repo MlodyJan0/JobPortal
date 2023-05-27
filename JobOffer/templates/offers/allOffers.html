@@ -13,17 +13,27 @@
         html, body {
             height: 100%;
             margin: 0px;
-            background-color: #4B4A67;
+            background-color: #BFCDE0;
         }
+        .btn{
+            background-color: #5D5D81;
+            color: #BFCDE0;
+            border: 1px solid;
+        }
+        .btn:hover{
+            background-color: #3B3355;
+            color: white;
+        }
+
     </style>
 
 </head>
 
-<div style="background-color: #4B4A67 ">
+<div style="background-color: #BFCDE0 ">
     <div style="padding-left:1%;  margin-top:1%;margin-left:5%;  display: inline-block; float:left;position:fixed;">
         {% if not ifEdit  %}
         <p style="margin-top:20%;">
-            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 Show Categories
             </a>
         </p>
@@ -32,8 +42,7 @@
         {% ifchanged %}
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
-                <a style="text-decoration: none; color: navy; font-family:
-                'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
+                <a style="text-decoration: none; color: navy;"
                    href="{% url 'detail-category' offer.category %}"> {{ offer.category }}</a></br>
             </div>
         </div>
@@ -42,9 +51,10 @@
         {% endif %}
 
     </div>
-    <h1 align="center" style="color: white;">Offers for Jobs </h1>
+    
     <ul>
-        <div style="width: 900px; margin: 0 auto; background-color: #C9DCB3; min-block-size:1000px;">
+        <div style="width: 900px; margin: 0 auto; background-color: #5D5D81; min-block-size:1000px;">
+            <h1 align="center" style="color: #BFCDE0;">Offers for Jobs </h1>
             {% if object_list %}
             {% for offer in object_list %}
 
@@ -74,7 +84,7 @@
             {% endfor %}
 
             {% else %}
-            <h1 align="center">There are no job offers</h1>
+            <h1 align="center" style="color: #BFCDE0;">There are no job offers</h1>
             {% endif %}
         </div>
     </ul>
