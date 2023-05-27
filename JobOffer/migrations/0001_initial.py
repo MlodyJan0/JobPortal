@@ -43,11 +43,7 @@ class Migration(migrations.Migration):
                 ('phoneNumber', models.CharField(max_length=11)),
                 ('email', models.EmailField(max_length=254)),
                 ('description', models.CharField(max_length=255)),
-<<<<<<< HEAD
-                ('image', models.FileField(upload_to='', verbose_name='Your CV')),
-=======
                 ('file', models.FileField(upload_to='', verbose_name='Your CV')),
->>>>>>> b9e229c5c81c5afdc7e47185efba354fed9104cf
                 ('experience', models.DecimalField(blank=True, decimal_places=1, max_digits=3, null=True)),
                 ('education', models.CharField(blank=True, max_length=50, null=True)),
                 ('knownLanguages', models.CharField(blank=True, max_length=255, null=True)),
