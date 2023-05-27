@@ -26,7 +26,7 @@ class OfferResponseForm(forms.ModelForm):
 
     class Meta:
         model = OfferResponse
-        fields = ('description', 'experience','education', 'knownLanguages', 'image')
+        fields = ('description', 'experience','education', 'knownLanguages', 'file')
         widgets = {
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 10, 'cols': 5}),
             'experience': forms.Textarea(attrs={'class': 'form-control', 'rows': 1, 'cols': 5, 'required': 'False'}),

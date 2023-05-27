@@ -55,7 +55,7 @@ class OfferResponse(models.Model):
     phoneNumber = models.CharField(max_length=11)
     email = models.EmailField()
     description = models.CharField(max_length=255)
-    image = models.FileField(blank=False, verbose_name=u"Your CV" )
+    file = models.FileField(blank=False, verbose_name=u"Your CV" )
     experience = models.DecimalField(max_digits = 3, decimal_places = 1, blank = True, null = True )
     education = models.CharField(max_length=50, blank = True, null = True)    #wyksztalcenie
     knownLanguages = models.CharField(max_length=255, blank = True, null = True)

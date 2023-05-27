@@ -31,8 +31,8 @@
             Known languages: <h1>{{ response.knownLanguages }}</h1>
             {%endif%}
 
-            {%if response.image %}
-            <a href="{{response.image.url}}" target="_blank" style="text-decoration:none;color:dodgerblue;font-size:25px;">Show CV of candidate</a>
+            {%if response.file %}
+            <a href="{{response.file.url}}" target="_blank" style="text-decoration:none;color:dodgerblue;font-size:25px;">Show CV of candidate</a>
             {%endif%}
         </div>
             {% endfor %}
