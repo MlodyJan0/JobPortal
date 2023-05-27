@@ -6,7 +6,7 @@
 
 <div class="wrapper">
     <div class="logo">
-        <img src="https://www.clipartmax.com/png/middle/32-329418_find-best-jobs-in-our-portal-job-logo.png" alt="">
+        <img src="{% static 'icon.png' %}">
     </div>
     <div class="text-center mt-4 name">
         <center>JobOffers</center> 
@@ -14,7 +14,7 @@
     {% if form.errors %}
     <p>Your login/password is incorrect.</p>
     {%endif%}
-    <form class="p-3 mt-3" method="POST" action="{%url 'login' %}">
+    <form method="POST" action="{%url 'login' %}">
         {% csrf_token %}
 
         <div class="form-field d-flex align-items-center">
@@ -28,13 +28,13 @@
         </div>
 
         </br>
-        <button class="btn mt-3" style="height:8%;font-size:29px;">Log in</button>
+        <button class="btn" >Log in</button>
     </form>
 
-    <div class="text-center fs-6" style="font-size:20px;">
+    <div class="text-center fs-6" >
         </br>
-        <center><a href="{% url 'register-user' %}" style="font-size: 19px;">  Sign up</a> as a client or 
-                <a href="{% url 'register-company' %}" style="font-size: 19px;">  As a company</a>.</br>             
+        <center><a href="{% url 'register-user' %}" >  Sign up</a> as a client or 
+                <a href="{% url 'register-company' %}" >  As a company</a>.</br>             
         </center>
     </div>
     </br>
