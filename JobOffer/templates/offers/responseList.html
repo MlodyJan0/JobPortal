@@ -17,19 +17,19 @@
     <div style=" margin:0px; padding:10px; ">
         {% for response in responses %}
         <div style="background-color: #5D5D81; min-width: 32%; min-height: 600px; padding: 20px; margin: 5px; float: left; margin-left:1%; border-radius: 15px;">
-            Name: <h1>{{ response.firstName }}</h1>
-            Lastname: <h1>{{ response.lastName }}</h1>
-            Phone: <h1>{{ response.phoneNumber }}</h1>
-            Email: <h1>{{ response.email }}</h1>
+            Name: <h2>{{ response.firstName }}</h2>
+            Lastname: <h2>{{ response.lastName }}</h2>
+            Phone: <h2>{{ response.phoneNumber }}</h2>
+            Email: <h2>{{ response.email }}</h2>
             Description: {{ response.description }}
             {%if response.experience %}
-            Experience in profession(years): <h1>{{ response.experience }}</h1>
+            Experience in profession(years): <h2>{{ response.experience }}</h2>
             {%endif%}
             {%if response.education %}
-            Education level: <h1>{{ response.education }}</h1>
+            Education level: <h2>{{ response.education }}</h2>
             {%endif%}
             {%if response.knownLanguages %}
-            Known languages: <h1>{{ response.knownLanguages }}</h1>
+            Known languages: <h2>{{ response.knownLanguages }}</h2>
             {%endif%}
 
             {%if response.file %}
